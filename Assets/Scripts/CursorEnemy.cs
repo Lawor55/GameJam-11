@@ -1,20 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CursorEnemy : MonoBehaviour
 {
-    
-    [SerializeField] private 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Transform player;
+    [SerializeField] private float followSpeed;
+
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        TrackPlayer();
+    }
+
+    private void TrackPlayer()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, player.position, followSpeed * Time.deltaTime);
     }
 }
