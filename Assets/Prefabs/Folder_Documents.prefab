@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 43
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4646481717765427045
 SpriteRenderer:
@@ -132,16 +132,16 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.011170149, y: -0.073721886}
+  m_Offset: {x: 0.014090836, y: 0.070149355}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.9585799, y: 1.0236686}
+    oldSize: {x: 1.351126, y: 1.4428691}
     newSize: {x: 0.9585799, y: 1.0236686}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.93298006, y: 0.7721329}
+  m_Size: {x: 1.1519054, y: 0.26858592}
   m_EdgeRadius: 0
