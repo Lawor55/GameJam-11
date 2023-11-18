@@ -29,6 +29,13 @@ public class GameManager : MonoBehaviour
         if (rageValue >= 100) FinishLevel();
     }
 
+    public void AddRage(float newRageValue)
+    {
+        rageValue += newRageValue;
+
+        if (rageValue >= 100) FinishLevel();
+    }
+
     private void FinishLevel()
     {
         Debug.Log("Level Done");

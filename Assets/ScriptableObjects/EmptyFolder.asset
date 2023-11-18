@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b5ea3a1a0001744b6baca8b33cdadc, type: 3}
   m_Name: EmptyFolder
   m_EditorClassIdentifier: 
-  rageAmount: 0
+  rageAmount: 40
   folderName: 
   folderSprite: {fileID: 21300000, guid: c320ee0c4db614a4384fa2565034f118, type: 3}
   corruptedFolderSprite: {fileID: 21300000, guid: f71b53ff9e7ecd24482ed57743ecf931,

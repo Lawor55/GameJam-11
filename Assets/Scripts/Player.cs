@@ -55,8 +55,6 @@ public class Player : MonoBehaviour
             return;
         }
 
-        ;
-
         corruptible.Corrupt();
     }
 

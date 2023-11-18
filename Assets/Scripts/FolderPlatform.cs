@@ -17,9 +17,10 @@ public class PlatformFolder : MonoBehaviour, ICorruptible
 
     public void Corrupt()
     {
-        if (!canBeCorrupted) return;
+        if (!canBeCorrupted || IsCorrupted) return;
 
         IsCorrupted = true;
         sprite.sprite = folderType.corruptedFolderSprite;
+        GameManager.Instance.AddRage(folderType.rageAmount);
     }
 }
