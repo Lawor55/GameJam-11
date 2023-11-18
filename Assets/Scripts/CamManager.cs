@@ -17,8 +17,8 @@ public class CamManager : MonoBehaviour
     {
         isInGame = inGame;
 
-        mainCam.gameObject.SetActive(!inGame);
-        renderCam.gameObject.SetActive(!inGame);
-        inGameCam.gameObject.SetActive(inGame);
+        mainCam.enabled = !inGame;
+        renderCam.enabled = !inGame;
+        inGameCam.enabled = inGame;
     }
 }
