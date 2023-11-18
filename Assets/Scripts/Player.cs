@@ -2,8 +2,23 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private void Start()
+    private readonly int maxHealth = 3;
+    private int currentHealth;
+
+    private GameManager gameManager;
+    public static Player Instance { get; private set; }
+
+    private void Awake()
     {
+        if (Instance != null) Debug.LogWarning("There is more than one Player");
+        Instance = this;
+
+        currentHealth = maxHealth;
+    }
+
+    public void Start()
+    {
+        gameManager = GameManager.Instance;
     }
 
     private void Update()
@@ -11,10 +26,12 @@ public class Player : MonoBehaviour
         HandleCrouch();
     }
 
-    private void OnDrawGizmos()
+    public void Damage(int damageAmount)
     {
-        Gizmos.color = Color.magenta;
-        Gizmos.DrawRay(transform.position, -Vector2.up);
+        currentHealth -= damageAmount;
+        Debug.Log(currentHealth);
+
+        if (currentHealth <= 0) gameManager.GameOver();
     }
 
     private void HandleCrouch()
@@ -37,5 +54,10 @@ public class Player : MonoBehaviour
         ;
 
         corruptible.Corrupt();
+    }
+
+    public Vector3 GetPos()
+    {
+        return transform.position;
     }
 }
