@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canBeCorrupted: 1
-  folderType: {fileID: 0}
+  folderType: {fileID: 11400000, guid: ad2c113534f895e489fe9268fb1f83cb, type: 2}
 --- !u!61 &4770434975543368462
 BoxCollider2D:
   m_ObjectHideFlags: 0
