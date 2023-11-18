@@ -1,4 +1,4 @@
-using UnityEngine;
+    using UnityEngine;
 
 public class Player : MonoBehaviour
 {
@@ -57,7 +57,7 @@ public class Player : MonoBehaviour
         if (!actions.PlayerControlls.Sting.IsPressed()) return;
 
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up, 1f, corruptibleLayerMask);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up, 2f, corruptibleLayerMask);
 
         if (!hit) return;
 
