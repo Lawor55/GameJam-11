@@ -135,6 +135,17 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""55b21bf1-f109-4abb-859b-b780bfa3828d"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""968fe70d-accb-4bc2-8394-5358cb67fac2"",
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
