@@ -10,12 +10,28 @@ public class Player : MonoBehaviour
     private GameManager gameManager;
     public static Player Instance { get; private set; }
 
+    private Controlls actions;
+
     private void Awake()
     {
         if (Instance != null) Debug.LogWarning("There is more than one Player");
         Instance = this;
 
         currentHealth = maxHealth;
+
+        //create instant of the wrapper class for our controlls
+        actions = new Controlls();
+    }
+
+    //activates the movement map when this script gets enabled
+    void OnEnable()
+    {
+        actions.PlayerControlls.Enable();
+    }
+    //deactivates the movement map when this script gets disabled
+    void OnDisable()
+    {
+        actions.PlayerControlls.Disable();
     }
 
     public void Start()
@@ -38,7 +54,7 @@ public class Player : MonoBehaviour
 
     private void HandleCrouch()
     {
-        if (!Input.GetKeyDown(KeyCode.S)) return;
+        if (!actions.PlayerControlls.Sting.IsPressed()) return;
 
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up, 1f, corruptibleLayerMask);
