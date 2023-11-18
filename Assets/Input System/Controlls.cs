@@ -53,6 +53,15 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""22d78f74-2897-4c92-871a-bccae67993a4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -154,6 +163,17 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
                     ""action"": ""Sting"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3377b8b7-a203-4e32-987c-1e7b7facf681"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -182,6 +202,7 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
         m_PlayerControlls_Movement = m_PlayerControlls.FindAction("Movement", throwIfNotFound: true);
         m_PlayerControlls_Jump = m_PlayerControlls.FindAction("Jump", throwIfNotFound: true);
         m_PlayerControlls_Sting = m_PlayerControlls.FindAction("Sting", throwIfNotFound: true);
+        m_PlayerControlls_Pause = m_PlayerControlls.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -246,6 +267,7 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerControlls_Movement;
     private readonly InputAction m_PlayerControlls_Jump;
     private readonly InputAction m_PlayerControlls_Sting;
+    private readonly InputAction m_PlayerControlls_Pause;
     public struct PlayerControllsActions
     {
         private @Controlls m_Wrapper;
@@ -253,6 +275,7 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
         public InputAction @Movement => m_Wrapper.m_PlayerControlls_Movement;
         public InputAction @Jump => m_Wrapper.m_PlayerControlls_Jump;
         public InputAction @Sting => m_Wrapper.m_PlayerControlls_Sting;
+        public InputAction @Pause => m_Wrapper.m_PlayerControlls_Pause;
         public InputActionMap Get() { return m_Wrapper.m_PlayerControlls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -271,6 +294,9 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
             @Sting.started += instance.OnSting;
             @Sting.performed += instance.OnSting;
             @Sting.canceled += instance.OnSting;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
         }
 
         private void UnregisterCallbacks(IPlayerControllsActions instance)
@@ -284,6 +310,9 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
             @Sting.started -= instance.OnSting;
             @Sting.performed -= instance.OnSting;
             @Sting.canceled -= instance.OnSting;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
         }
 
         public void RemoveCallbacks(IPlayerControllsActions instance)
@@ -315,5 +344,6 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnSting(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
 }

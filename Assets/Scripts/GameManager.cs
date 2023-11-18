@@ -1,3 +1,5 @@
+using UI;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,8 +8,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float rageValue;
     [SerializeField] private CamManager camManager;
     [SerializeField] private LevelSo[] levelArray;
+    [SerializeField] private GameObject pauseMenuPrefab;
+    [SerializeField] private SceneAsset mainMenu;
 
     private LevelSo currentLevel;
+    private bool isPaused;
+    private GameObject pauseMenu;
 
     public static GameManager Instance { get; private set; }
 
@@ -16,11 +22,22 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this);
 
 
-        if (Instance != null) Debug.LogWarning("There is more than one GameManager!");
+        if (Instance != null)
+        {
+            Debug.LogWarning("There is more than one GameManager!");
+            Destroy(gameObject);
+        }
+
         Instance = this;
 
 
         if (camManager != null) camManager.SetInGame(true);
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(mainMenu.name);
+        currentLevel = null;
     }
 
     public LevelSo[] GetLevels()
@@ -28,10 +45,37 @@ public class GameManager : MonoBehaviour
         return levelArray;
     }
 
+    public void PauseGame(bool pause)
+    {
+        isPaused = pause;
+
+        if (pause)
+        {
+            Time.timeScale = 0;
+            pauseMenu = Instantiate(pauseMenuPrefab);
+            PauseMenu component = pauseMenu.GetComponent<PauseMenu>();
+            component.SetLevel(currentLevel);
+
+            return;
+        }
+
+        Destroy(pauseMenu);
+        Time.timeScale = 1;
+    }
+
+    public bool IsPaused()
+    {
+        return isPaused;
+    }
+
+    public void SetCamManager(CamManager camManager)
+    {
+        this.camManager = camManager;
+    }
+
     public void SetLevel(LevelSo level)
     {
-        SceneManager.LoadSceneAsync(level.scene.name);
-        Debug.Log("heyyyyyyy");
+        SceneManager.LoadScene(level.scene.name);
         currentLevel = level;
     }
 

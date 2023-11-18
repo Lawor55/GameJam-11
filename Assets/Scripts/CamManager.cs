@@ -8,6 +8,13 @@ public class CamManager : MonoBehaviour
 
     private bool isInGame;
 
+    private void Awake()
+    {
+        GameManager.Instance.SetCamManager(this);
+        // TODO: Debug only:
+        SetInGame(true);
+    }
+
     public bool GetInGame()
     {
         return isInGame;
