@@ -1,14 +1,14 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("Player Settings")] [SerializeField] [Range(0.1f, 10)]
-    private float moveSpeed = 3;
-
+    [Header("Player Settings")]
+    [SerializeField] [Range(0.1f, 10)] private float moveSpeed = 3;
     [SerializeField] [Range(1, 10)] private float jumpHeight = 3;
-
     //[SerializeField] [Range(1, 10)] private float airTimeTillStop = 5;
-    [SerializeField] private float gravity = -9.81f;
+    [SerializeField]  private float gravity = -9.81f;
 
     [Header("Ground and Ceiling Check Settings")]
     [SerializeField] bool showCheckZones = true;
@@ -30,39 +30,25 @@ public class PlayerController : MonoBehaviour
         //create instant of the wrapper class for our controlls
         actions = new Controlls();
     }
+    //activates the movement map when this script gets enabled
+    void OnEnable()
+    {
+        actions.PlayerControlls.Enable();
+    }
+    //deactivates the movement map when this script gets disabled
+    void OnDisable()
+    {
+        actions.PlayerControlls.Disable();
+    }
 
     // Start is called before the first frame update
-    private void Start()
+    void Start()
     {
         rbPlayer = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    private void Update()
-    {
-        Movement();
-    }
-
-    //activates the movement map when this script gets enabled
-    private void OnEnable()
-    {
-        actions.PlayerControlls.Enable();
-    }
-
-    //deactivates the movement map when this script gets disabled
-    private void OnDisable()
-    {
-        actions.PlayerControlls.Disable();
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.layer == 3)
-            //Debug.Log("Is Grounded");
-            isGrounded = true;
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
+    void Update()
     {
         Groundcheck();
         Movement();
@@ -108,7 +94,10 @@ public class PlayerController : MonoBehaviour
         }
         */
 
-        if (!isGrounded) moveVelocity.y += gravity * Time.deltaTime;
+        if (!isGrounded)
+        {
+            moveVelocity.y += gravity * Time.deltaTime;
+        }
 
         //applies combined movement velocity
         rbPlayer.velocity = moveVelocity;
@@ -116,16 +105,31 @@ public class PlayerController : MonoBehaviour
         //xVelocity = moveVelocity.x;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void CeilingCheck()
     {
-        if (collision.gameObject.layer == 3)
+        if (Physics2D.OverlapBox(ceilingCheckPosition.position, new Vector2(checkWidth, checkHeight), 0, groundLayerMask))
         {
-            //Debug.Log("Is Grounded");
-            isGrounded = true;
+            Debug.Log("Ceiling Bonk");
+            moveVelocity = new Vector2(moveVelocity.x, -1);
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        isGrounded = false;
-    }
+
+    //public void SetMoveVelocity(float newMoveVelocity)
+    //{
+    //    moveVelocity.y = newMoveVelocity;
+    //}
+
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.layer == 3)
+    //    {
+    //        //Debug.Log("Is Grounded");
+    //        isGrounded = true;
+    //    }
+    //}
+
+    //private void OnTriggerExit2D(Collider2D collision)
+    //{
+    //    isGrounded = false;
+    //}
 }

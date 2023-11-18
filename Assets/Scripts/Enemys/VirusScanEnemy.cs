@@ -5,7 +5,7 @@ using UnityEngine;
 public class VirusScanEnemy : BaseEnemy
 {
     [Header("Virus Scan Settings")]
-    [SerializeField] [Range(3,50)] private float turningSpeed;
+    [SerializeField] private float turningSpeed;
 
     private Transform virusScanOrigin;
 
