@@ -3,21 +3,24 @@ using UnityEngine;
 public class PlatformFolder : MonoBehaviour, ICorruptible
 {
     [SerializeField] private bool canBeCorrupted;
+    [SerializeField] private FolderTypeSo folderType;
 
     private SpriteRenderer sprite;
 
     private void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
+        sprite.sprite = folderType.folderSprite;
     }
 
     public bool IsCorrupted { get; private set; }
 
     public void Corrupt()
     {
-        if (!canBeCorrupted) return;
+        if (!canBeCorrupted || IsCorrupted) return;
 
         IsCorrupted = true;
-        sprite.color = Color.red;
+        sprite.sprite = folderType.corruptedFolderSprite;
+        GameManager.Instance.AddRage(folderType.rageAmount);
     }
 }
