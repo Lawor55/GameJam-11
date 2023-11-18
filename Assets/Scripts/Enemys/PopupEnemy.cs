@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DvdPopupEnemy : BaseEnemy
+public class PopupEnemy : BaseEnemy
 {
     [SerializeField] private bool isMoving;
     [SerializeField] private float speed;

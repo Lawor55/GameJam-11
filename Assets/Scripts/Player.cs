@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private LayerMask corruptibleLayerMask;
+
     private readonly int maxHealth = 3;
     private int currentHealth;
 
@@ -39,9 +41,11 @@ public class Player : MonoBehaviour
         if (!Input.GetKeyDown(KeyCode.S)) return;
 
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up, 1f);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up, 1f, corruptibleLayerMask);
 
         if (!hit) return;
+
+        Debug.Log(hit.collider.name);
 
         ICorruptible corruptible = hit.transform.GetComponent<ICorruptible>();
 
