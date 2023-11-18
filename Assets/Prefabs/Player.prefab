@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 291282034324656023}
   - component: {fileID: 7277300064970329398}
   - component: {fileID: 6636994581022503930}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 923360355267884569}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8019908284153384883
 MonoBehaviour:
