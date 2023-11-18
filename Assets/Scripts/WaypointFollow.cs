@@ -12,7 +12,7 @@ public class WaypointFollow : MonoBehaviour
     [SerializeField] private bool reset;
 
     //Toggle um zu aktivieren das der Spieler vom Objekt mitgezogen wird
-    [SerializeField] private bool PlayerStick;
+    [SerializeField] private bool playerStick;
 
     private int currentWaypoint;
 
@@ -50,13 +50,13 @@ public class WaypointFollow : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //Wenn eine Kollision stattfindet und das Objekt den Spieler Tag hat und PlayerStick auf true ist setze selbst als Parent vom Spieler
-        if (collision.gameObject.CompareTag("Player") && PlayerStick)
+        if (collision.gameObject.CompareTag("Player") && playerStick)
             collision.gameObject.transform.SetParent(transform);
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
         //Wenn eine Kollision verlassen wird und das Objekt den Spieler Tag hat und PlayerStick auf true ist setze nichts als Parent vom Spieler
-        if (collision.gameObject.CompareTag("Player") && PlayerStick) collision.gameObject.transform.SetParent(null);
+        if (collision.gameObject.CompareTag("Player") && playerStick) collision.gameObject.transform.SetParent(null);
     }
 }

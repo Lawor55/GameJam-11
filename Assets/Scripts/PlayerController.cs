@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Physics2D.OverlapBox(groundCheckPosition.position, new Vector2(checkWidth, checkHeight), 0, groundLayerMask))
         {
-            Debug.Log("Is Grounded");
+            //Debug.Log("Is Grounded");
             isGrounded = true;
         }
     }
@@ -109,7 +109,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Physics2D.OverlapBox(ceilingCheckPosition.position, new Vector2(checkWidth, checkHeight), 0, groundLayerMask))
         {
-            Debug.Log("Ceiling Bonk");
+            //Debug.Log("Ceiling Bonk");
             moveVelocity = new Vector2(moveVelocity.x, -1);
         }
     }
