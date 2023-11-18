@@ -7,6 +7,7 @@ public class FolderTypeSo : ScriptableObject
     public string folderName;
     public Sprite folderSprite;
     public Sprite corruptedFolderSprite;
+    public float timeUntilFix;
 
     private string[] folderNames;
 
