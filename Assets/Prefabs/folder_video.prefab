@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canBeCorrupted: 1
-  folderType: {fileID: 0}
+  folderType: {fileID: 11400000, guid: efc22cb838158534091745436f7b882d, type: 2}
 --- !u!61 &2030141767954005917
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -136,7 +136,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.1266667, y: 0.98}
+    oldSize: {x: 0.9941176, y: 0.86470586}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
