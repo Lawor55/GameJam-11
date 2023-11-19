@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform groundCheckPosition;
     [SerializeField] private LayerMask groundLayerMask;
 
-    private Controlls actions;
+    private Controlls controlls;
     private Rigidbody2D rbPlayer;
     private Vector2 moveVelocity;
     private bool isGrounded = false;
@@ -28,17 +28,17 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         //create instant of the wrapper class for our controlls
-        actions = new Controlls();
+        controlls = new Controlls();
     }
     //activates the movement map when this script gets enabled
     void OnEnable()
     {
-        actions.PlayerControlls.Enable();
+        controlls.PlayerControlls.Enable();
     }
     //deactivates the movement map when this script gets disabled
     void OnDisable()
     {
-        actions.PlayerControlls.Disable();
+        controlls.PlayerControlls.Disable();
     }
 
     // Start is called before the first frame update
@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Physics2D.OverlapBox(groundCheckPosition.position, new Vector2(checkWidth, checkHeight), 0, groundLayerMask))
         {
-            Debug.Log("Is Grounded");
+            //Debug.Log("Is Grounded");
             isGrounded = true;
             moveVelocity = new Vector2(moveVelocity.x, -1);
         }
@@ -83,9 +83,9 @@ public class PlayerController : MonoBehaviour
     private void Movement()
     {
         //sideways movement
-        moveVelocity.x = actions.PlayerControlls.Movement.ReadValue<float>() * moveSpeed;
+        moveVelocity.x = controlls.PlayerControlls.Movement.ReadValue<float>() * moveSpeed;
         //vertical movement. formula to calculate the jump acceleration based on gravity and the desired jump height
-        if (actions.PlayerControlls.Jump.IsPressed() && isGrounded)
+        if (controlls.PlayerControlls.Jump.IsPressed() && isGrounded)
         {
             Debug.Log("Jump");
             moveVelocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity);
@@ -114,7 +114,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Physics2D.OverlapBox(ceilingCheckPosition.position, new Vector2(checkWidth, checkHeight), 0, groundLayerMask))
         {
-            Debug.Log("Ceiling Bonk");
+            //Debug.Log("Ceiling Bonk");
             moveVelocity = new Vector2(moveVelocity.x, -1);
         }
     }
