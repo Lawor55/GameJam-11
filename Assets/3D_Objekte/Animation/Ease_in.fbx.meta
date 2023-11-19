@@ -33,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Eae_In
+      name: Ease_In
       takeName: Vases_GJ11
       internalID: 4924504929397961106
-      firstFrame: 861
-      lastFrame: 944
+      firstFrame: 604
+      lastFrame: 980
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 83c698dbbb92e3741b09bc45b5fcc0c9
+guid: c5adf92ced7b4874da75adce67e7753b
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -36,8 +36,8 @@ ModelImporter:
       name: Punch
       takeName: Vases_GJ11
       internalID: 4924504929397961106
-      firstFrame: 604
-      lastFrame: 860
+      firstFrame: 600
+      lastFrame: 800
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
