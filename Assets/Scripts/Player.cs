@@ -59,6 +59,12 @@ public class Player : MonoBehaviour
         if (currentHealth <= 0) gameManager.GameOver();
     }
 
+    public int GetHealth()
+    {
+        return currentHealth;
+    }
+
+
     private void HandleCrouch()
     {
         if (!controlls.PlayerControlls.Sting.IsPressed()) return;

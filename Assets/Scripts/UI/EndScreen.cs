@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,19 +14,28 @@ namespace UI
         [SerializeField] private TMP_Text headingText;
         [SerializeField] private Image background;
 
+        private GameManager gameManager;
+
         private bool hasWon;
         private LevelSo level;
 
 
         private void Start()
         {
-            nextButton.SetActive(hasWon);
+            gameManager = GameManager.Instance;
+
+            restartButton.SetActive(hasWon);
             restartButton.SetActive(!hasWon);
 
             if (hasWon)
             {
                 background.color = Color.green;
                 headingText.text = "level completed";
+
+                LevelSo[] levels = gameManager.GetLevels();
+                int index = Array.IndexOf(levels, level);
+
+                nextButton.SetActive(index + 1 > levels.Length);
             }
             else
             {
@@ -41,7 +51,7 @@ namespace UI
 
         public void RestartLevel()
         {
-            GameManager.Instance.SetLevel(level);
+            gameManager.SetLevel(level);
         }
 
         public void ExitGame()
@@ -51,12 +61,11 @@ namespace UI
 
         public void MainMenu()
         {
-            GameManager.Instance.MainMenu();
+            gameManager.MainMenu();
         }
 
         public void NextLevel()
         {
-            GameManager.Instance.PauseGame(false);
         }
 
         public void SetLevel(LevelSo newLevel)
