@@ -35,7 +35,7 @@ namespace UI
                 LevelSo[] levels = gameManager.GetLevels();
                 int index = Array.IndexOf(levels, level);
 
-                nextButton.SetActive(index + 1 > levels.Length);
+                nextButton.SetActive(index + 1 <= levels.Length);
             }
             else
             {
