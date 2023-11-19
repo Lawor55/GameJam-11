@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     private Controlls controlls;
 
     private Animator animator;
+    private AudioSource audioSource;
 
     private void Awake()
     {
@@ -40,6 +41,7 @@ public class Player : MonoBehaviour
     {
         gameManager = GameManager.Instance;
         animator = GetComponentInChildren<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -52,6 +54,7 @@ public class Player : MonoBehaviour
     {
         currentHealth -= damageAmount;
         Debug.Log(currentHealth);
+        audioSource.Play();
 
         if (currentHealth <= 0) gameManager.GameOver();
     }
