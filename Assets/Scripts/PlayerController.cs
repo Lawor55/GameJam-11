@@ -61,6 +61,11 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Is Grounded");
             isGrounded = true;
+            moveVelocity = new Vector2(moveVelocity.x, -1);
+        }
+        else
+        {
+            isGrounded = false;
         }
     }
 
