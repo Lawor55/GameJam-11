@@ -120,7 +120,7 @@ public class GameManager : MonoBehaviour
     private void FinishLevel()
     {
         camManager.SetInGame(false);
-        fist.Punch();
+        // fist.Punch();
         StartCoroutine(WaitForAnimation());
 
         Debug.Log("Level Done");
@@ -128,7 +128,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator WaitForAnimation()
     {
-        yield return new WaitForSecondsRealtime(4f);
+        yield return new WaitForSecondsRealtime(7f);
 
         EndScreen screen = Instantiate(endScreen).GetComponent<EndScreen>();
         FreezeTime(true);
