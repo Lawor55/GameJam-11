@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 
     private readonly int maxHealth = 3;
 
-    private Controlls actions;
+    private Controlls controlls;
     private int currentHealth;
 
     private GameManager gameManager;
@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
         currentHealth = maxHealth;
 
         //create instant of the wrapper class for our controlls
-        actions = new Controlls();
+        controlls = new Controlls();
     }
 
     public void Start()
@@ -31,18 +31,24 @@ public class Player : MonoBehaviour
     private void Update()
     {
         HandleCrouch();
+        CheckPause();
     }
 
     //activates the movement map when this script gets enabled
     private void OnEnable()
     {
-        actions.PlayerControlls.Enable();
+        controlls.PlayerControlls.Enable();
     }
 
     //deactivates the movement map when this script gets disabled
     private void OnDisable()
     {
-        actions.PlayerControlls.Disable();
+        controlls.PlayerControlls.Disable();
+    }
+
+    private void CheckPause()
+    {
+        if (controlls.PlayerControlls.Pause.WasPressedThisFrame()) gameManager.PauseGame(!gameManager.IsPaused());
     }
 
     public void Damage(int damageAmount)
@@ -53,9 +59,15 @@ public class Player : MonoBehaviour
         if (currentHealth <= 0) gameManager.GameOver();
     }
 
+    public int GetHealth()
+    {
+        return currentHealth;
+    }
+
+
     private void HandleCrouch()
     {
-        if (!actions.PlayerControlls.Sting.IsPressed()) return;
+        if (!controlls.PlayerControlls.Sting.IsPressed()) return;
 
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up, 2f, corruptibleLayerMask);

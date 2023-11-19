@@ -1,4 +1,6 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace UI
 {
@@ -13,8 +15,9 @@ namespace UI
             gameManager = GameManager.Instance;
             foreach (LevelSo level in gameManager.GetLevels())
             {
-                LevelButton button = Instantiate(buttonPrefab, transform).GetComponent<LevelButton>();
-                button.SetText(level.levelName);
+                GameObject button = Instantiate(buttonPrefab, transform);
+                button.GetComponentInChildren<TMP_Text>().text = level.levelName;
+                button.GetComponent<Button>().onClick.AddListener(() => { gameManager.SetLevel(level); });
             }
         }
     }

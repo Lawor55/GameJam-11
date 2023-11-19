@@ -31,7 +31,6 @@ public class PopupEnemy : BaseEnemy
         float xMax = bounds.max.x;
         float yMax = bounds.max.y;
 
-
         switch (nextPos)
         {
             case var _ when nextPos.x > xMax || nextPos.x < xMin:

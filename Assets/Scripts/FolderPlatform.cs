@@ -8,7 +8,9 @@ public class PlatformFolder : MonoBehaviour, ICorruptible
 
     private GameManager gameManager;
 
+
     private SpriteRenderer sprite;
+    private float timeInterval;
 
     private void Start()
     {
@@ -16,6 +18,21 @@ public class PlatformFolder : MonoBehaviour, ICorruptible
         sprite = GetComponent<SpriteRenderer>();
         sprite.sprite = folderType.folderSprite;
     }
+
+
+    private void LateUpdate()
+    {
+        // ones per in seconds
+        timeInterval += Time.deltaTime;
+        if (timeInterval >= 1 && IsCorrupted)
+        {
+            timeInterval = 0;
+            // Performance friendly code here
+
+            RageTick();
+        }
+    }
+
 
     public bool IsCorrupted { get; private set; }
 
@@ -25,23 +42,27 @@ public class PlatformFolder : MonoBehaviour, ICorruptible
 
         IsCorrupted = true;
         sprite.sprite = folderType.corruptedFolderSprite;
-        GameManager.Instance.AddRage(folderType.rageAmount);
 
 
         if (folderType.timeUntilFix <= 0) return;
 
+
         StartCoroutine(FixCorruption());
+    }
+
+    private void RageTick()
+    {
+        GameManager.Instance.AddRage(folderType.rageAmount);
     }
 
     private IEnumerator FixCorruption()
     {
-        yield return new WaitForSeconds(folderType.timeUntilFix / folderType.timeUntilFix *
-                                        gameManager.GetCurrentLevel().fixMultiplier);
+        // / folderType.timeUntilFix * gameManager.GetCurrentLevel().fixMultiplier
+        yield return new WaitForSeconds(folderType.timeUntilFix);
 
         IsCorrupted = false;
         sprite.sprite = folderType.folderSprite;
 
-
-        gameManager.SetRageValue(gameManager.GetRageValue() - folderType.rageAmount);
+        gameManager.SetRageValue(gameManager.GetRageValue() - folderType.rageAmount * folderType.timeUntilFix / 2);
     }
 }
