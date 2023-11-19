@@ -2929,7 +2929,7 @@ PrefabInstance:
     - target: {fileID: 937134232539737721, guid: 220dd1a803772f74da0179868e20c046,
         type: 3}
       propertyPath: damageAmount
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 937134232539737721, guid: 220dd1a803772f74da0179868e20c046,
         type: 3}
@@ -4567,7 +4567,7 @@ PrefabInstance:
     - target: {fileID: 937134232539737721, guid: 220dd1a803772f74da0179868e20c046,
         type: 3}
       propertyPath: damageAmount
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 937134232539737721, guid: 220dd1a803772f74da0179868e20c046,
         type: 3}
@@ -4904,7 +4904,7 @@ PrefabInstance:
     - target: {fileID: 937134232539737721, guid: 220dd1a803772f74da0179868e20c046,
         type: 3}
       propertyPath: damageAmount
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 937134232539737721, guid: 220dd1a803772f74da0179868e20c046,
         type: 3}

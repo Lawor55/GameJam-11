@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b5ea3a1a0001744b6baca8b33cdadc, type: 3}
   m_Name: music_cor
   m_EditorClassIdentifier: 
-  rageAmount: 40
-  folderName: 
+  rageAmount: 1
+  folderName: New Folder
   folderSprite: {fileID: 21300000, guid: 6366282ad18f57a4cb4a601276761214, type: 3}
   corruptedFolderSprite: {fileID: 21300000, guid: 16303d08973982b4aa43076d0723bb34,
     type: 3}
+  timeUntilFix: 10
