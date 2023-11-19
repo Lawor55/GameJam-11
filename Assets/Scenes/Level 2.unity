@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -347,6 +347,11 @@ PrefabInstance:
       value: folder_folder_5
       objectReference: {fileID: 0}
     - target: {fileID: 4770434975543368462, guid: 416dc38c2a7440045a6650b3d8b9993e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550761106516236363, guid: 416dc38c2a7440045a6650b3d8b9993e,
         type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1865,6 +1870,16 @@ PrefabInstance:
       propertyPath: m_Offset.x
       value: 0.5997218
       objectReference: {fileID: 0}
+    - target: {fileID: 8550761106516236363, guid: 416dc38c2a7440045a6650b3d8b9993e,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.1694055
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550761106516236363, guid: 416dc38c2a7440045a6650b3d8b9993e,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.5525386
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1901,6 +1916,57 @@ Transform:
   m_Father: {fileID: 2056689875}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1256653516 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6739025000185272747, guid: 116da4d9c3a866b498cc0069ef9f395d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2080893898}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1256653520
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256653516}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.6, y: 0.8}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.6, y: 0.8}
+  m_EdgeRadius: 0
 --- !u!1 &1257658012
 GameObject:
   m_ObjectHideFlags: 0
@@ -2592,12 +2658,12 @@ PrefabInstance:
     - target: {fileID: 491202166274822083, guid: f1d142f682c701045a3906dea3c7caea,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -5.47
       objectReference: {fileID: 0}
     - target: {fileID: 491202166274822083, guid: f1d142f682c701045a3906dea3c7caea,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.5
+      value: 2.51
       objectReference: {fileID: 0}
     - target: {fileID: 491202166274822083, guid: f1d142f682c701045a3906dea3c7caea,
         type: 3}
@@ -2643,6 +2709,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8019908284153384883, guid: f1d142f682c701045a3906dea3c7caea,
+        type: 3}
+      propertyPath: groundLayerMask.m_Bits
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3165,7 +3236,11 @@ PrefabInstance:
     - {fileID: 5809014846711768760, guid: 116da4d9c3a866b498cc0069ef9f395d, type: 3}
     - {fileID: 8740274073465733783, guid: 116da4d9c3a866b498cc0069ef9f395d, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6739025000185272747, guid: 116da4d9c3a866b498cc0069ef9f395d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1256653520}
   m_SourcePrefab: {fileID: 100100000, guid: 116da4d9c3a866b498cc0069ef9f395d, type: 3}
 --- !u!1 &2082681353 stripped
 GameObject:
@@ -3188,6 +3263,51 @@ MonoBehaviour:
   damageAmount: 3
   isMoving: 0
   speed: 0
+--- !u!61 &2082681359
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2082681353}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 8, y: 4}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8, y: 4}
+  m_EdgeRadius: 0
 --- !u!1 &2097358260
 GameObject:
   m_ObjectHideFlags: 0
@@ -3602,6 +3722,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2082681356}
+    - targetCorrespondingSourceObject: {fileID: 8486621073032727517, guid: 909b5011a62e831418d655b9f27c2a82,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2082681359}
   m_SourcePrefab: {fileID: 100100000, guid: 909b5011a62e831418d655b9f27c2a82, type: 3}
 --- !u!4 &6969324827667313777
 Transform:
@@ -3786,7 +3910,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 854713510}
+      objectReference: {fileID: 1257658014}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
