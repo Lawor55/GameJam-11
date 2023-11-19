@@ -617,6 +617,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22f7ad3da77f1444daa4270488d5e8ed, type: 3}
+--- !u!114 &902022299 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 954732957322419257, guid: 22f7ad3da77f1444daa4270488d5e8ed,
+    type: 3}
+  m_PrefabInstance: {fileID: 902022298}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f74831c87f3a54781172b028a29d39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1151082363
 GameObject:
   m_ObjectHideFlags: 0
@@ -630,7 +642,7 @@ GameObject:
   - component: {fileID: 1151082366}
   - component: {fileID: 1151082365}
   m_Layer: 5
-  m_Name: Button_StartGame
+  m_Name: Button_ExitGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -701,10 +713,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1669913318}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
+      - m_Target: {fileID: 902022299}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: Quit
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -886,18 +898,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1206712217}
   m_CullTransparentMesh: 1
---- !u!114 &1669913318 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4546673778316634800, guid: 22f7ad3da77f1444daa4270488d5e8ed,
-    type: 3}
-  m_PrefabInstance: {fileID: 902022298}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a32b73ce216c0d44a1e8f8664f4390e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1746726327
 GameObject:
   m_ObjectHideFlags: 0
@@ -1105,7 +1105,7 @@ GameObject:
   - component: {fileID: 2054947968}
   - component: {fileID: 2054947967}
   m_Layer: 5
-  m_Name: Button_LevelSelection
+  m_Name: Button_StartGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1176,16 +1176,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1669913318}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 902022299}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: SpecificScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Level_Selection
+          m_StringArgument: MainMenu
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2054947968

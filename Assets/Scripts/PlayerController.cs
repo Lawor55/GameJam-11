@@ -27,7 +27,6 @@ public class PlayerController : MonoBehaviour
     //private AudioSource audioSource;
     //[SerializeField] AudioClip audioClipImpact;
 
-
     private void Awake()
     {
         //create instant of the wrapper class for our controlls

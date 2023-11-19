@@ -2428,6 +2428,11 @@ PrefabInstance:
       propertyPath: audioClipImpact
       value: 
       objectReference: {fileID: 8300000, guid: 75ebb22df740c9d478e0a43005077b71, type: 3}
+    - target: {fileID: 8019908284153384883, guid: f1d142f682c701045a3906dea3c7caea,
+        type: 3}
+      propertyPath: groundLayerMask.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
