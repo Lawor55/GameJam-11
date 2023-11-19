@@ -10,7 +10,9 @@ public class Player : MonoBehaviour
     private GameManager gameManager;
     public static Player Instance { get; private set; }
 
-    private Controlls actions;
+    private Controlls controlls;
+
+    private Animator animator;
 
     private void Awake()
     {
@@ -20,28 +22,30 @@ public class Player : MonoBehaviour
         currentHealth = maxHealth;
 
         //create instant of the wrapper class for our controlls
-        actions = new Controlls();
+        controlls = new Controlls();
     }
 
     //activates the movement map when this script gets enabled
     void OnEnable()
     {
-        actions.PlayerControlls.Enable();
+        controlls.PlayerControlls.Enable();
     }
     //deactivates the movement map when this script gets disabled
     void OnDisable()
     {
-        actions.PlayerControlls.Disable();
+        controlls.PlayerControlls.Disable();
     }
 
     public void Start()
     {
         gameManager = GameManager.Instance;
+        animator = GetComponentInChildren<Animator>();
     }
 
     private void Update()
     {
         HandleCrouch();
+        Animation();
     }
 
     public void Damage(int damageAmount)
@@ -54,8 +58,7 @@ public class Player : MonoBehaviour
 
     private void HandleCrouch()
     {
-        if (!actions.PlayerControlls.Sting.IsPressed()) return;
-
+        if (!controlls.PlayerControlls.Sting.IsPressed()) return;
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up, 1f, corruptibleLayerMask);
 
@@ -74,6 +77,14 @@ public class Player : MonoBehaviour
         ;
 
         corruptible.Corrupt();
+    }
+
+    private void Animation()
+    {
+        if (!animator.GetBool("stab") && controlls.PlayerControlls.Sting.WasPerformedThisFrame())
+        {
+            animator.SetTrigger("stab");
+        }
     }
 
     public Vector3 GetPos()

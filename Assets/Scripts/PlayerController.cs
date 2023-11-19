@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rbPlayer;
     private Vector2 moveVelocity;
     private bool isGrounded = false;
+    Animator animator;
 
 
     private void Awake()
@@ -45,6 +46,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rbPlayer = GetComponent<Rigidbody2D>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -52,6 +54,7 @@ public class PlayerController : MonoBehaviour
     {
         Groundcheck();
         Movement();
+        Animation();
         CeilingCheck();
     }
 
@@ -84,6 +87,15 @@ public class PlayerController : MonoBehaviour
     {
         //sideways movement
         moveVelocity.x = controlls.PlayerControlls.Movement.ReadValue<float>() * moveSpeed;
+        if (moveVelocity.x != 0)
+        {
+            animator.SetBool("isWalking",true);
+        }
+        else
+        {
+            animator.SetBool("isWalking", false);
+        }
+
         //vertical movement. formula to calculate the jump acceleration based on gravity and the desired jump height
         if (controlls.PlayerControlls.Jump.IsPressed() && isGrounded)
         {
@@ -108,6 +120,14 @@ public class PlayerController : MonoBehaviour
         rbPlayer.velocity = moveVelocity;
         //Debug.Log("Move Velocity: " + moveVelocity);
         //xVelocity = moveVelocity.x;
+    }
+
+    private void Animation()
+    {
+        if (!animator.GetBool("jump") && controlls.PlayerControlls.Jump.WasPerformedThisFrame())
+        {
+            animator.SetTrigger("jump");
+        }
     }
 
     private void CeilingCheck()
