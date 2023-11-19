@@ -462,7 +462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.24113703, g: 1, b: 0, a: 0.5019608}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1168,7 +1168,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 1
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -1227,8 +1227,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextButton: {fileID: 4245523321793934016}
   restartButton: {fileID: 642384952078943737}
-  winSprite: {fileID: 0}
-  gameOverSprite: {fileID: 0}
+  winSprite: {fileID: 21300000, guid: 0e545c2b7002b4c45a8060f07dec37c2, type: 3}
+  gameOverSprite: {fileID: 21300000, guid: 202cd9b0863167142bf9c99cf6d54042, type: 3}
   headingText: {fileID: 3964899603205919688}
   background: {fileID: 4912177965999684892}
 --- !u!1 &7349047598768943297

@@ -29,8 +29,8 @@ namespace UI
 
             if (hasWon)
             {
-                background.color = Color.green;
-                headingText.text = "level completed";
+                background.sprite = winSprite;
+                headingText.text = "Win";
 
                 LevelSo[] levels = gameManager.GetLevels();
                 int index = Array.IndexOf(levels, level);
@@ -39,7 +39,7 @@ namespace UI
             }
             else
             {
-                background.color = Color.red;
+                background.sprite = gameOverSprite;
                 headingText.text = "game over";
             }
         }
