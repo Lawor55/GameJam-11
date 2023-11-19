@@ -63,7 +63,13 @@ public class Player : MonoBehaviour
         Debug.Log(currentHealth);
         audioSource.Play();
 
-        if (currentHealth <= 0) gameManager.GameOver();
+        if (currentHealth <= 0)
+        {
+            gameManager.GameOver();
+            currentHealth = maxHealth;
+
+        }
+
     }
 
     public int GetHealth()

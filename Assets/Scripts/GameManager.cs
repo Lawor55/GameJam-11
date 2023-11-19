@@ -106,6 +106,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(level.scene.name);
         FreezeTime(false);
         currentLevel = level;
+        isGameOver = false;
     }
 
     public float GetRageValue()
@@ -148,7 +149,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator WaitForAnimation()
     {
-        yield return new WaitForSecondsRealtime(7f);
+        yield return new WaitForSecondsRealtime(3f);
 
         EndScreen screen = Instantiate(endScreen).GetComponent<EndScreen>();
         FreezeTime(true);

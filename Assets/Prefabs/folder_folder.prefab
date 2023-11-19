@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 658327031814648839}
   - component: {fileID: 4646481717765427045}
   - component: {fileID: 3825509827721363521}
-  - component: {fileID: 4770434975543368462}
+  - component: {fileID: 8550761106516236363}
   m_Layer: 3
   m_Name: folder_folder
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4646481717765427045
 SpriteRenderer:
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBeCorrupted: 0
   folderType: {fileID: 11400000, guid: ad2c113534f895e489fe9268fb1f83cb, type: 2}
---- !u!61 &4770434975543368462
+--- !u!61 &8550761106516236363
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,7 +132,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00076907873, y: 0.22109777}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -143,5 +143,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9867948, y: 0.25396425}
+  m_Size: {x: 1.1650486, y: 1.0007468}
   m_EdgeRadius: 0
