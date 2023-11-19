@@ -125,7 +125,7 @@ public class GameManager : MonoBehaviour
     private void FinishLevel()
     {
         camManager.SetInGame(false);
-        // fist.Punch();
+        fist.Punch();
         StartCoroutine(WaitForAnimation());
 
         Debug.Log("Level Done");

@@ -24,7 +24,7 @@ namespace UI
         {
             gameManager = GameManager.Instance;
 
-            restartButton.SetActive(hasWon);
+            nextButton.SetActive(hasWon);
             restartButton.SetActive(!hasWon);
 
             if (hasWon)
@@ -66,6 +66,11 @@ namespace UI
 
         public void NextLevel()
         {
+
+            LevelSo[] levels = gameManager.GetLevels();
+            int index = Array.IndexOf(levels, level);
+            gameManager.SetLevel(levels[index + 1]);
+
         }
 
         public void SetLevel(LevelSo newLevel)
