@@ -5,10 +5,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Player Settings")]
-    [SerializeField] [Range(0.1f, 10)] private float moveSpeed = 3;
-    [SerializeField] [Range(1, 10)] private float jumpHeight = 3;
+    [SerializeField] private float moveSpeed = 3;
+    [SerializeField] private float jumpHeight = 3;
     //[SerializeField] [Range(1, 10)] private float airTimeTillStop = 5;
-    [SerializeField] [Range(-20, -1)] private float gravity = -9.81f;
+    [SerializeField] private float gravity = -9.81f;
 
     [Header("Ground and Ceiling Check Settings")]
     [SerializeField] bool showCheckZones = true;
@@ -22,8 +22,10 @@ public class PlayerController : MonoBehaviour
     private Controlls controlls;
     private Rigidbody2D rbPlayer;
     private Vector2 moveVelocity;
-    private bool isGrounded = false;
+    private bool isGrounded = true;
     Animator animator;
+    //private AudioSource audioSource;
+    //[SerializeField] AudioClip audioClipImpact;
 
 
     private void Awake()
@@ -47,6 +49,7 @@ public class PlayerController : MonoBehaviour
     {
         rbPlayer = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
+        //audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -60,8 +63,12 @@ public class PlayerController : MonoBehaviour
 
     private void Groundcheck()
     {
-        if (Physics2D.OverlapBox(groundCheckPosition.position, new Vector2(checkWidth, checkHeight), 0, groundLayerMask))
+        if (Physics2D.OverlapBox(groundCheckPosition.position, new Vector2(checkWidth, checkHeight), 0, groundLayerMask) != null)
         {
+            //if (!isGrounded)
+            //{
+            //    audioSource.PlayOneShot(audioClipImpact);
+            //}
             //Debug.Log("Is Grounded");
             isGrounded = true;
             moveVelocity = new Vector2(moveVelocity.x, -1);
@@ -151,19 +158,5 @@ public class PlayerController : MonoBehaviour
     //public void SetMoveVelocity(float newMoveVelocity)
     //{
     //    moveVelocity.y = newMoveVelocity;
-    //}
-
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.gameObject.layer == 3)
-    //    {
-    //        //Debug.Log("Is Grounded");
-    //        isGrounded = true;
-    //    }
-    //}
-
-    //private void OnTriggerExit2D(Collider2D collision)
-    //{
-    //    isGrounded = false;
     //}
 }
