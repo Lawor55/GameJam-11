@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private LevelSo[] levelArray;
     [SerializeField] private GameObject pauseMenuPrefab;
     [SerializeField] private SceneAsset mainMenu;
+    [SerializeField] private GameObject endScreen;
 
     private LevelSo currentLevel;
     private bool isPaused;
@@ -45,13 +46,18 @@ public class GameManager : MonoBehaviour
         return levelArray;
     }
 
+    public void FreezeTime(bool freeze)
+    {
+        Time.timeScale = freeze ? 0 : 1;
+    }
+
     public void PauseGame(bool pause)
     {
         isPaused = pause;
 
         if (pause)
         {
-            Time.timeScale = 0;
+            FreezeTime(true);
             pauseMenu = Instantiate(pauseMenuPrefab);
             PauseMenu component = pauseMenu.GetComponent<PauseMenu>();
             component.SetLevel(currentLevel);
@@ -60,7 +66,7 @@ public class GameManager : MonoBehaviour
         }
 
         Destroy(pauseMenu);
-        Time.timeScale = 1;
+        FreezeTime(false);
     }
 
     public bool IsPaused()
@@ -76,6 +82,7 @@ public class GameManager : MonoBehaviour
     public void SetLevel(LevelSo level)
     {
         SceneManager.LoadScene(level.scene.name);
+        FreezeTime(false);
         currentLevel = level;
     }
 
@@ -105,12 +112,20 @@ public class GameManager : MonoBehaviour
 
     private void FinishLevel()
     {
+        FreezeTime(true);
         Debug.Log("Level Done");
+        EndScreen screen = Instantiate(endScreen).GetComponent<EndScreen>();
+        screen.SetHasWon(true);
+        screen.SetLevel(currentLevel);
     }
 
     public void GameOver()
     {
+        FreezeTime(true);
         Debug.Log("Game Over");
+        EndScreen screen = Instantiate(endScreen).GetComponent<EndScreen>();
+        screen.SetHasWon(false);
+        screen.SetLevel(currentLevel);
     }
 
     public LevelSo GetCurrentLevel()
