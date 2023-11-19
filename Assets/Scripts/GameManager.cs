@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     private Fist fist;
     private bool isPaused;
     private GameObject pauseMenu;
+    private bool isGameOver;
 
     public static GameManager Instance { get; private set; }
 
@@ -124,11 +125,16 @@ public class GameManager : MonoBehaviour
 
     private void FinishLevel()
     {
+        if (isGameOver)
+        {
+            return;
+        }
         camManager.SetInGame(false);
         fist.Punch();
         StartCoroutine(WaitForAnimation());
 
         Debug.Log("Level Done");
+        isGameOver = true;
     }
 
     private IEnumerator WaitForAnimation()
@@ -143,11 +149,17 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        
+        if (isGameOver)
+        {
+            return;
+        }
         FreezeTime(true);
         Debug.Log("Game Over");
         EndScreen screen = Instantiate(endScreen).GetComponent<EndScreen>();
         screen.SetHasWon(false);
         screen.SetLevel(currentLevel);
+        isGameOver = true;
     }
 
     public LevelSo GetCurrentLevel()

@@ -131,6 +131,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 954732957322419257, guid: 22f7ad3da77f1444daa4270488d5e8ed,
+        type: 3}
+      propertyPath: mainMenu
+      value: 
+      objectReference: {fileID: 102900000, guid: dd494d9e99928614499c5a1285084e96,
+        type: 3}
+    - target: {fileID: 954732957322419257, guid: 22f7ad3da77f1444daa4270488d5e8ed,
+        type: 3}
+      propertyPath: endScreen
+      value: 
+      objectReference: {fileID: 5647047360639599817, guid: 57b65ac77e3c4994bbcc247a6f26d02c,
+        type: 3}
+    - target: {fileID: 954732957322419257, guid: 22f7ad3da77f1444daa4270488d5e8ed,
+        type: 3}
+      propertyPath: audioClipDeath
+      value: 
+      objectReference: {fileID: 8300000, guid: 1f64812313dc60b4db12fbc17d88f687, type: 3}
+    - target: {fileID: 954732957322419257, guid: 22f7ad3da77f1444daa4270488d5e8ed,
+        type: 3}
+      propertyPath: pauseMenuPrefab
+      value: 
+      objectReference: {fileID: 3990349496027126688, guid: c8f7e24dc12e1ba409b5215f9fcc659c,
+        type: 3}
     - target: {fileID: 2920170779932775061, guid: 22f7ad3da77f1444daa4270488d5e8ed,
         type: 3}
       propertyPath: m_Name
@@ -2121,6 +2144,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2524999687557711707, guid: f1d142f682c701045a3906dea3c7caea,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0890257fed43ac640b09a64902ceec98, type: 3}
     - target: {fileID: 6636994581022503930, guid: f1d142f682c701045a3906dea3c7caea,
         type: 3}
       propertyPath: m_Mass

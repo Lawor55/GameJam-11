@@ -12,8 +12,6 @@ public class Player : MonoBehaviour
     private GameManager gameManager;
     public static Player Instance { get; private set; }
 
-    private Controlls controlls;
-
     private Animator animator;
     private AudioSource audioSource;
 

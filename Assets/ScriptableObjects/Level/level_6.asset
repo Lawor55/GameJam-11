@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b94af6799581d3b42abb3a722e1fbd44, type: 3}
-  m_Name: levelOne
+  m_Name: level_6
   m_EditorClassIdentifier: 
-  levelName: Level 1
-  scene: {fileID: 102900000, guid: d8474c63f8b6a39408a80690a3c89d19, type: 3}
+  levelName: Level 6
+  scene: {fileID: 102900000, guid: 1101e161e7bff9d43be8ddb41d1adb01, type: 3}
   rageNeeded: 100
   fixMultiplier: 1

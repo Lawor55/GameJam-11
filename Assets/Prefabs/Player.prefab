@@ -77,7 +77,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   corruptibleLayerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 8
 --- !u!212 &291282034324656023
 SpriteRenderer:
   m_ObjectHideFlags: 0
