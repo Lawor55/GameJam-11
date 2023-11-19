@@ -20,6 +20,11 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance { get; private set; }
 
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip audioClipStart;
+    [SerializeField] private AudioClip audioClipDeath;
+
+
     private void Awake()
     {
         DontDestroyOnLoad(this);

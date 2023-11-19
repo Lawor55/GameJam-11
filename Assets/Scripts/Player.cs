@@ -12,6 +12,11 @@ public class Player : MonoBehaviour
     private GameManager gameManager;
     public static Player Instance { get; private set; }
 
+    private Controlls controlls;
+
+    private Animator animator;
+    private AudioSource audioSource;
+
     private void Awake()
     {
         if (Instance != null) Debug.LogWarning("There is more than one Player");
@@ -25,7 +30,10 @@ public class Player : MonoBehaviour
 
     public void Start()
     {
+        controlls.PlayerControlls.Enable();
         gameManager = GameManager.Instance;
+        animator = GetComponentInChildren<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -55,6 +63,7 @@ public class Player : MonoBehaviour
     {
         currentHealth -= damageAmount;
         Debug.Log(currentHealth);
+        audioSource.Play();
 
         if (currentHealth <= 0) gameManager.GameOver();
     }
@@ -68,7 +77,6 @@ public class Player : MonoBehaviour
     private void HandleCrouch()
     {
         if (!controlls.PlayerControlls.Sting.IsPressed()) return;
-
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up, 2f, corruptibleLayerMask);
 
@@ -85,6 +93,14 @@ public class Player : MonoBehaviour
         }
 
         corruptible.Corrupt();
+    }
+
+    private void Animation()
+    {
+        if (!animator.GetBool("stab") && controlls.PlayerControlls.Sting.WasPerformedThisFrame())
+        {
+            animator.SetTrigger("stab");
+        }
     }
 
     public Vector3 GetPos()
