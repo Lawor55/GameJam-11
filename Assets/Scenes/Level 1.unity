@@ -139,12 +139,12 @@ PrefabInstance:
     - target: {fileID: 436656285197477424, guid: 8f3aaccfd949fdc4fbb107771148b0c2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.1
+      value: -21.29
       objectReference: {fileID: 0}
     - target: {fileID: 436656285197477424, guid: 8f3aaccfd949fdc4fbb107771148b0c2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.66
+      value: -10.42
       objectReference: {fileID: 0}
     - target: {fileID: 436656285197477424, guid: 8f3aaccfd949fdc4fbb107771148b0c2,
         type: 3}
@@ -461,12 +461,12 @@ PrefabInstance:
     - target: {fileID: 491202166274822083, guid: f1d142f682c701045a3906dea3c7caea,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.28
+      value: -0.08
       objectReference: {fileID: 0}
     - target: {fileID: 491202166274822083, guid: f1d142f682c701045a3906dea3c7caea,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.28
+      value: -10.05
       objectReference: {fileID: 0}
     - target: {fileID: 491202166274822083, guid: f1d142f682c701045a3906dea3c7caea,
         type: 3}
@@ -512,16 +512,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7665004104016297289, guid: f1d142f682c701045a3906dea3c7caea,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 3.2793708
-      objectReference: {fileID: 0}
-    - target: {fileID: 7665004104016297289, guid: f1d142f682c701045a3906dea3c7caea,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: 2.3081882
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2461,6 +2451,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 294d394406bc7ee44aeaaa7802636417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageAmount: 0
+  followSpeed: 0
+  dashMultiplier: 0
+  dashCooldown: 0
+  dashCooldownVariation: 0
+  dashDuration: 0
 --- !u!212 &1294284826
 SpriteRenderer:
   m_ObjectHideFlags: 0

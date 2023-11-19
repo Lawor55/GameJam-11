@@ -524,12 +524,12 @@ PrefabInstance:
     - target: {fileID: 491202166274822083, guid: f1d142f682c701045a3906dea3c7caea,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.94
+      value: -5.03
       objectReference: {fileID: 0}
     - target: {fileID: 491202166274822083, guid: f1d142f682c701045a3906dea3c7caea,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.47
+      value: 2.87
       objectReference: {fileID: 0}
     - target: {fileID: 491202166274822083, guid: f1d142f682c701045a3906dea3c7caea,
         type: 3}
@@ -2229,6 +2229,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 294d394406bc7ee44aeaaa7802636417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageAmount: 0
+  followSpeed: 0
+  dashMultiplier: 0
+  dashCooldown: 0
+  dashCooldownVariation: 0
+  dashDuration: 0
 --- !u!212 &1294284826
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2744,7 +2750,7 @@ MonoBehaviour:
   - {fileID: 1706282045}
   speed: 2
   reset: 0
-  PlayerStick: 0
+  playerStick: 1
 --- !u!212 &1767337057
 SpriteRenderer:
   m_ObjectHideFlags: 0
