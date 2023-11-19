@@ -75,7 +75,7 @@ public class Player : MonoBehaviour
     private void HandleCrouch()
     {
         if (!controlls.PlayerControlls.Sting.IsPressed()) return;
-
+        Animation();
         RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up, 2f, corruptibleLayerMask);
 
         if (!hit) return;

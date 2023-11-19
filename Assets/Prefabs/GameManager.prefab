@@ -46,8 +46,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rageValue: 0
+  camManager: {fileID: 0}
+  levelArray: []
+  pauseMenuPrefab: {fileID: 3990349496027126688, guid: c8f7e24dc12e1ba409b5215f9fcc659c,
+    type: 3}
+  mainMenu: {fileID: 102900000, guid: dd494d9e99928614499c5a1285084e96, type: 3}
+  endScreen: {fileID: 5647047360639599817, guid: 57b65ac77e3c4994bbcc247a6f26d02c,
+    type: 3}
   audioClipStart: {fileID: 8300000, guid: ab1f6c6d1b09adc40ad16b8b77a3ba3d, type: 3}
-  audioClipDeath: {fileID: 8300000, guid: c896ade73090ac24ea3930b53cd4bf5c, type: 3}
+  audioClipDeath: {fileID: 8300000, guid: 1f64812313dc60b4db12fbc17d88f687, type: 3}
 --- !u!82 &7710171486789571840
 AudioSource:
   m_ObjectHideFlags: 0
