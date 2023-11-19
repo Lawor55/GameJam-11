@@ -128,6 +128,15 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetTrigger("jump");
         }
+
+        if (!isGrounded)
+        {
+            animator.SetBool("inAir", true);
+        }
+        else
+        {
+            animator.SetBool("inAir", false);
+        }
     }
 
     private void CeilingCheck()
