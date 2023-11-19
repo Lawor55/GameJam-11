@@ -176,4 +176,14 @@ public class GameManager : MonoBehaviour
     {
         return currentLevel;
     }
+
+    public void SpecificScene(string specificLevelName)
+    {
+        SceneManager.LoadScene(specificLevelName);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
