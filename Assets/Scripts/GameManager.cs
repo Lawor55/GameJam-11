@@ -113,6 +113,8 @@ public class GameManager : MonoBehaviour
     private void FinishLevel()
     {
         FreezeTime(true);
+
+
         Debug.Log("Level Done");
         EndScreen screen = Instantiate(endScreen).GetComponent<EndScreen>();
         screen.SetHasWon(true);
