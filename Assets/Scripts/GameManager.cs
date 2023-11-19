@@ -39,8 +39,17 @@ public class GameManager : MonoBehaviour
 
         Instance = this;
 
-
         if (camManager != null) camManager.SetInGame(true);
+    }
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            audioSource.PlayOneShot(audioClipStart);
+        }
     }
 
     public void MainMenu()
@@ -150,13 +159,13 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        
         if (isGameOver)
         {
             return;
         }
         FreezeTime(true);
         Debug.Log("Game Over");
+        audioSource.PlayOneShot(audioClipDeath);
         EndScreen screen = Instantiate(endScreen).GetComponent<EndScreen>();
         screen.SetHasWon(false);
         screen.SetLevel(currentLevel);
@@ -166,5 +175,15 @@ public class GameManager : MonoBehaviour
     public LevelSo GetCurrentLevel()
     {
         return currentLevel;
+    }
+
+    public void SpecificScene(string specificLevelName)
+    {
+        SceneManager.LoadScene(specificLevelName);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }

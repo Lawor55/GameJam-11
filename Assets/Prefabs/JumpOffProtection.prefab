@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5119844936679941108}
   - component: {fileID: 8279426152815514744}
   - component: {fileID: 3508864333325311241}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ Transform:
   - {fileID: 5197109857727116966}
   - {fileID: 5119844936679941108}
   m_Father: {fileID: 0}
-  m_RootOrder: 56
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8131482667542706600
 GameObject:
@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: 5197109857727116966}
   - component: {fileID: 7437770464249847548}
   - component: {fileID: 4206380656585857389}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 4320912026836547493}
   - component: {fileID: 4758655740095687604}
   - component: {fileID: 660195779379291772}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
