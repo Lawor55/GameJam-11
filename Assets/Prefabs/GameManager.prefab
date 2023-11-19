@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8186549095688051496}
   - component: {fileID: 954732957322419257}
-  - component: {fileID: 4546673778316634800}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -46,15 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rageValue: 0
---- !u!114 &4546673778316634800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2920170779932775061}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a32b73ce216c0d44a1e8f8664f4390e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  camManager: {fileID: 0}
+  levelArray: []
+  pauseMenuPrefab: {fileID: 0}
+  mainMenu: {fileID: 0}
+  endScreen: {fileID: 0}
