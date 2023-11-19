@@ -748,7 +748,7 @@ GameObject:
   - component: {fileID: 270033265}
   - component: {fileID: 270033264}
   m_Layer: 0
-  m_Name: test_bg
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -795,7 +795,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f71b53ff9e7ecd24482ed57743ecf931, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 11f79a38e72173c4d8ec38f93b559493, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -814,8 +814,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 270033263}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1957, y: -0.58, z: 6.25}
-  m_LocalScale: {x: 3.3070333, y: 3.3701658, z: 3.2210317}
+  m_LocalPosition: {x: 0.0244, y: -0.2452, z: 6.25}
+  m_LocalScale: {x: 2.2057638, y: 2.2478728, z: 2.1484015}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -837,12 +837,12 @@ PrefabInstance:
     - target: {fileID: 491202166274822083, guid: f1d142f682c701045a3906dea3c7caea,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.92
+      value: -0.13
       objectReference: {fileID: 0}
     - target: {fileID: 491202166274822083, guid: f1d142f682c701045a3906dea3c7caea,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.15
+      value: -6.85
       objectReference: {fileID: 0}
     - target: {fileID: 491202166274822083, guid: f1d142f682c701045a3906dea3c7caea,
         type: 3}
@@ -4768,6 +4768,9 @@ MonoBehaviour:
   rageValue: 0
   camManager: {fileID: 814518444}
   levelArray: []
+  pauseMenuPrefab: {fileID: 0}
+  mainMenu: {fileID: 0}
+  endScreen: {fileID: 0}
 --- !u!4 &1959528464
 Transform:
   m_ObjectHideFlags: 0
