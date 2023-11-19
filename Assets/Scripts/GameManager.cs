@@ -1,3 +1,4 @@
+using System.Collections;
 using UI;
 using UnityEditor;
 using UnityEngine;
@@ -11,8 +12,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject pauseMenuPrefab;
     [SerializeField] private SceneAsset mainMenu;
     [SerializeField] private GameObject endScreen;
-
     private LevelSo currentLevel;
+
+    private Fist fist;
     private bool isPaused;
     private GameObject pauseMenu;
 
@@ -44,6 +46,11 @@ public class GameManager : MonoBehaviour
     public LevelSo[] GetLevels()
     {
         return levelArray;
+    }
+
+    public void SetFist(Fist fist)
+    {
+        this.fist = fist;
     }
 
     public void FreezeTime(bool freeze)
@@ -112,11 +119,19 @@ public class GameManager : MonoBehaviour
 
     private void FinishLevel()
     {
-        FreezeTime(true);
-
+        camManager.SetInGame(false);
+        fist.Punch();
+        StartCoroutine(WaitForAnimation());
 
         Debug.Log("Level Done");
+    }
+
+    private IEnumerator WaitForAnimation()
+    {
+        yield return new WaitForSecondsRealtime(4f);
+
         EndScreen screen = Instantiate(endScreen).GetComponent<EndScreen>();
+        FreezeTime(true);
         screen.SetHasWon(true);
         screen.SetLevel(currentLevel);
     }
