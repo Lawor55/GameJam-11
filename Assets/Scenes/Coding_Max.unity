@@ -958,7 +958,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &746268477
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1185,6 +1185,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground_1
       objectReference: {fileID: 0}
+    - target: {fileID: 5811617150438652468, guid: 0335a21c1129ea74e9fb488c66dc0161,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1257,6 +1262,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Ground_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5811617150438652468, guid: 0335a21c1129ea74e9fb488c66dc0161,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1676,6 +1686,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Ground_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5811617150438652468, guid: 0335a21c1129ea74e9fb488c66dc0161,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2340,6 +2355,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 5811617150438652468, guid: 0335a21c1129ea74e9fb488c66dc0161,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2413,11 +2433,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 2524999687557711707, guid: f1d142f682c701045a3906dea3c7caea,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 0890257fed43ac640b09a64902ceec98, type: 3}
     - target: {fileID: 6636994581022503930, guid: f1d142f682c701045a3906dea3c7caea,
         type: 3}
       propertyPath: m_Mass
@@ -2428,11 +2443,6 @@ PrefabInstance:
       propertyPath: audioClipImpact
       value: 
       objectReference: {fileID: 8300000, guid: 75ebb22df740c9d478e0a43005077b71, type: 3}
-    - target: {fileID: 8019908284153384883, guid: f1d142f682c701045a3906dea3c7caea,
-        type: 3}
-      propertyPath: groundLayerMask.m_Bits
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

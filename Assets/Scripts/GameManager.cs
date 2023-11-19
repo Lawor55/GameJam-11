@@ -84,8 +84,11 @@ public class GameManager : MonoBehaviour
             PauseMenu component = pauseMenu.GetComponent<PauseMenu>();
             component.SetLevel(currentLevel);
 
+            Cursor.lockState = CursorLockMode.Confined;
             return;
         }
+
+        Cursor.lockState = CursorLockMode.Locked;
 
         Destroy(pauseMenu);
         FreezeTime(false);
@@ -107,6 +110,10 @@ public class GameManager : MonoBehaviour
         FreezeTime(false);
         currentLevel = level;
         isGameOver = false;
+        if (level.scene.name != "MainMenu" || level.scene.name != "Title_Screen" || level.scene.name != "Level_Selection")
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
     }
 
     public float GetRageValue()

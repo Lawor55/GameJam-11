@@ -47,7 +47,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rageValue: 0
   camManager: {fileID: 0}
-  levelArray: []
+  levelArray:
+  - {fileID: 11400000, guid: 2bc01152e6d20a8439e9578fb333c950, type: 2}
+  - {fileID: 11400000, guid: 978c8076a4ec72e4dab617d53debb478, type: 2}
+  - {fileID: 11400000, guid: c7206ec1eae0f584eb2888f807ea8092, type: 2}
+  - {fileID: 11400000, guid: a0db74bac7525174fade2faf6c8ad941, type: 2}
+  - {fileID: 11400000, guid: 5a32f0aeeeaf7bc48bb6bde6f2a73237, type: 2}
+  - {fileID: 11400000, guid: f54a640a4cbc3d24b868d853eeb684b1, type: 2}
   pauseMenuPrefab: {fileID: 3990349496027126688, guid: c8f7e24dc12e1ba409b5215f9fcc659c,
     type: 3}
   mainMenu: {fileID: 102900000, guid: dd494d9e99928614499c5a1285084e96, type: 3}
