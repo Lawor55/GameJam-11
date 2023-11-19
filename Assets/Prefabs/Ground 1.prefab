@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3336430469507508598}
   - component: {fileID: 129188023456419248}
   - component: {fileID: 4337594293933720843}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Ground 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &129188023456419248
 SpriteRenderer:

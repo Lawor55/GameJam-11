@@ -103,7 +103,7 @@ MonoBehaviour:
   followSpeed: 100
   dashMultiplier: 50
   dashCooldown: 2
-  dashCooldownVariation: 4
+  dashCooldownVariation: 8
   dashDuration: 2
 --- !u!50 &6311061972104674743
 Rigidbody2D:
