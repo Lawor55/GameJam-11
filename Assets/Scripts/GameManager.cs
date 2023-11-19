@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private CamManager camManager;
     [SerializeField] private LevelSo[] levelArray;
     [SerializeField] private GameObject pauseMenuPrefab;
-    [SerializeField] private SceneAsset mainMenu;
+    [SerializeField] private string mainMenuName;
     [SerializeField] private GameObject endScreen;
     private LevelSo currentLevel;
 
@@ -21,9 +21,6 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance { get; private set; }
 
-    private AudioSource audioSource;
-    [SerializeField] private AudioClip audioClipStart;
-    [SerializeField] private AudioClip audioClipDeath;
 
 
     private void Awake()
@@ -41,20 +38,11 @@ public class GameManager : MonoBehaviour
 
         if (camManager != null) camManager.SetInGame(true);
     }
-
-    private void Start()
-    {
-        audioSource = GetComponent<AudioSource>();
-
-        if (SceneManager.GetActiveScene().buildIndex == 0)
-        {
-            audioSource.PlayOneShot(audioClipStart);
-        }
-    }
+    
 
     public void MainMenu()
     {
-        SceneManager.LoadScene(mainMenu.name);
+        SceneManager.LoadScene(mainMenuName);
         currentLevel = null;
     }
 
@@ -103,7 +91,7 @@ public class GameManager : MonoBehaviour
 
     public void SetLevel(LevelSo level)
     {
-        SceneManager.LoadScene(level.scene.name);
+        SceneManager.LoadScene(level.sceneName);
         FreezeTime(false);
         currentLevel = level;
         isGameOver = false;
@@ -139,6 +127,7 @@ public class GameManager : MonoBehaviour
         {
             return;
         }
+        
         camManager.SetInGame(false);
         fist.Punch();
         StartCoroutine(WaitForAnimation());
@@ -163,9 +152,8 @@ public class GameManager : MonoBehaviour
         {
             return;
         }
+        
         FreezeTime(true);
-        Debug.Log("Game Over");
-        audioSource.PlayOneShot(audioClipDeath);
         EndScreen screen = Instantiate(endScreen).GetComponent<EndScreen>();
         screen.SetHasWon(false);
         screen.SetLevel(currentLevel);

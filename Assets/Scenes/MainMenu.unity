@@ -537,7 +537,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f54a640a4cbc3d24b868d853eeb684b1, type: 2}
   pauseMenuPrefab: {fileID: 3990349496027126688, guid: c8f7e24dc12e1ba409b5215f9fcc659c,
     type: 3}
-  mainMenu: {fileID: 102900000, guid: dd494d9e99928614499c5a1285084e96, type: 3}
+  mainMenuName: MainMenu
   endScreen: {fileID: 5647047360639599817, guid: 57b65ac77e3c4994bbcc247a6f26d02c,
     type: 3}
   audioClipStart: {fileID: 0}

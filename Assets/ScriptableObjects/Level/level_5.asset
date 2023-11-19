@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: level_5
   m_EditorClassIdentifier: 
   levelName: Level 5
-  scene: {fileID: 102900000, guid: 22f3ffd211532cd4b965656b0c3fca2e, type: 3}
+  sceneName: Level 5
   rageNeeded: 20
   fixMultiplier: 1
