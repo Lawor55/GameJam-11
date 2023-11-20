@@ -526,7 +526,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87f74831c87f3a54781172b028a29d39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rageValue: 0
   camManager: {fileID: 0}
   levelArray:
   - {fileID: 11400000, guid: 2bc01152e6d20a8439e9578fb333c950, type: 2}
@@ -535,10 +534,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a0db74bac7525174fade2faf6c8ad941, type: 2}
   - {fileID: 11400000, guid: 5a32f0aeeeaf7bc48bb6bde6f2a73237, type: 2}
   - {fileID: 11400000, guid: f54a640a4cbc3d24b868d853eeb684b1, type: 2}
-  pauseMenuPrefab: {fileID: 3990349496027126688, guid: c8f7e24dc12e1ba409b5215f9fcc659c,
+  pauseMenuPrefab: {fileID: 3470525443149980250, guid: c8f7e24dc12e1ba409b5215f9fcc659c,
     type: 3}
   mainMenuName: MainMenu
-  endScreen: {fileID: 5647047360639599817, guid: 57b65ac77e3c4994bbcc247a6f26d02c,
+  endScreen: {fileID: 3215756655861116892, guid: 57b65ac77e3c4994bbcc247a6f26d02c,
     type: 3}
 --- !u!1 &1159625985
 GameObject:

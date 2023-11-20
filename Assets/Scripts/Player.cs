@@ -13,7 +13,6 @@ public class Player : MonoBehaviour
     public static Player Instance { get; private set; }
 
     private Animator animator;
-    private AudioSource audioSource;
 
     private void Awake()
     {
@@ -31,7 +30,6 @@ public class Player : MonoBehaviour
         controlls.PlayerControlls.Enable();
         gameManager = GameManager.Instance;
         animator = GetComponentInChildren<Animator>();
-        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -61,7 +59,6 @@ public class Player : MonoBehaviour
     {
         currentHealth -= damageAmount;
         Debug.Log(currentHealth);
-        audioSource.Play();
 
         if (currentHealth <= 0)
         {

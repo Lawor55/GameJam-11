@@ -6,13 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private float rageValue;
     [SerializeField] private CamManager camManager;
     [SerializeField] private LevelSo[] levelArray;
     [SerializeField] private GameObject pauseMenuPrefab;
     [SerializeField] private string mainMenuName;
     [SerializeField] private GameObject endScreen;
     private LevelSo currentLevel;
+    private float rageValue;
 
     private Fist fist;
     private bool isPaused;
@@ -20,7 +20,6 @@ public class GameManager : MonoBehaviour
     private bool isGameOver;
 
     public static GameManager Instance { get; private set; }
-
 
 
     private void Awake()
@@ -38,7 +37,7 @@ public class GameManager : MonoBehaviour
 
         if (camManager != null) camManager.SetInGame(true);
     }
-    
+
 
     public void MainMenu()
     {
@@ -64,6 +63,8 @@ public class GameManager : MonoBehaviour
     public void PauseGame(bool pause)
     {
         isPaused = pause;
+
+        if (isGameOver) return;
 
         if (pause)
         {
@@ -94,6 +95,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(level.sceneName);
         FreezeTime(false);
         currentLevel = level;
+        rageValue = 0;
         isGameOver = false;
     }
 
@@ -111,14 +113,12 @@ public class GameManager : MonoBehaviour
     {
         rageValue = newRageValue;
 
-        if (rageValue >= 100) FinishLevel();
+        if (rageValue >= currentLevel.rageNeeded) FinishLevel();
     }
 
     public void AddRage(float newRageValue)
     {
-        rageValue += newRageValue;
-
-        if (rageValue >= 100) FinishLevel();
+        SetRageValue(rageValue + newRageValue);
     }
 
     private void FinishLevel()
@@ -127,7 +127,7 @@ public class GameManager : MonoBehaviour
         {
             return;
         }
-        
+
         camManager.SetInGame(false);
         fist.Punch();
         StartCoroutine(WaitForAnimation());
@@ -152,7 +152,7 @@ public class GameManager : MonoBehaviour
         {
             return;
         }
-        
+
         FreezeTime(true);
         EndScreen screen = Instantiate(endScreen).GetComponent<EndScreen>();
         screen.SetHasWon(false);
