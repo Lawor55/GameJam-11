@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3803,6 +3803,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: IngameOverlay
       objectReference: {fileID: 0}
+    - target: {fileID: 2632807486106404437, guid: 27cdadda7f57d3f45a66d58eb118a702,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.3535995
+      objectReference: {fileID: 0}
+    - target: {fileID: 2632807486106404437, guid: 27cdadda7f57d3f45a66d58eb118a702,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.1602993
+      objectReference: {fileID: 0}
     - target: {fileID: 5444663323115073559, guid: 27cdadda7f57d3f45a66d58eb118a702,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -3812,6 +3822,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5444663323115073559, guid: 27cdadda7f57d3f45a66d58eb118a702,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5444663323115073559, guid: 27cdadda7f57d3f45a66d58eb118a702,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -3.0263977
       objectReference: {fileID: 0}
     - target: {fileID: 8960207995664813246, guid: 27cdadda7f57d3f45a66d58eb118a702,
         type: 3}
@@ -5309,7 +5329,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 1
+  m_RenderPostProcessing: 0
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0

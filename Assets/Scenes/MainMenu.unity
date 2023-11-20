@@ -276,8 +276,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1920, y: 1080}
+  m_AnchoredPosition: {x: -13, y: 0}
+  m_SizeDelta: {x: 1960, y: 1460}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &259256888
 MonoBehaviour:
@@ -353,7 +353,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 248}
-  m_SizeDelta: {x: 1920, y: 540}
+  m_SizeDelta: {x: 1440, y: 405}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &697521620
 MonoBehaviour:
@@ -540,8 +540,6 @@ MonoBehaviour:
   mainMenuName: MainMenu
   endScreen: {fileID: 5647047360639599817, guid: 57b65ac77e3c4994bbcc247a6f26d02c,
     type: 3}
-  audioClipStart: {fileID: 0}
-  audioClipDeath: {fileID: 0}
 --- !u!1 &1159625985
 GameObject:
   m_ObjectHideFlags: 0
@@ -715,7 +713,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -236.48}
-  m_SizeDelta: {x: 1549, y: 200}
+  m_SizeDelta: {x: 800, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1689059241
 MonoBehaviour:
