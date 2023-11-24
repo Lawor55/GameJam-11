@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelName: Level 1
   sceneName: Level 1
-  rageNeeded: 40
+  rageNeeded: 60
   fixMultiplier: 1

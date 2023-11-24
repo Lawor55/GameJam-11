@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3733,6 +3733,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Pop-Up Yellow
+      objectReference: {fileID: 0}
+    - target: {fileID: 1688759307714107997, guid: b52e7f318bb82664490d0c9c93a72053,
+        type: 3}
+      propertyPath: damageAmount
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4181938985811908712, guid: b52e7f318bb82664490d0c9c93a72053,
         type: 3}
